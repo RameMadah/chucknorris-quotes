@@ -1,7 +1,8 @@
 <template>
-  <div class="quote-wrapper">
-    <img alt="chuck-norris" src="../assets/chuck-norris.png" class="img" />
-    <h1 class="quote">"{{ randomQuote }}"</h1>
+  <div className="quote-wrapper">
+    <img @click="clickr()" alt="chuck-norris" src="../assets/chuck-norris.png" className="img"/>
+    <h1 className="quote">"{{  loadRandomQuote( randomQuote)}}"</h1>
+
   </div>
 </template>
 
@@ -10,18 +11,36 @@ export default {
   name: "ChuckNorrisQuote",
   data() {
     return {
-      randomQuote:
-        "Wenn alles funktioniert, steht hier ein Chuck Norris Spruch.",
+      r:'',
+      randomQuote: '',
     };
   },
   methods: {
-    loadRandomQuote() {
+    loadRandomQuote( randomQuote) {
       // ToDo: Rufen Sie hier den Rest-Endpunkt des Servers auf
+      randomQuote = this.randomQuote
+      return randomQuote
     },
     getRandomInt(maxExclusive) {
       return Math.floor(Math.random() * maxExclusive);
     },
+    clickr () {
+      location.reload()
+    }
   },
+  mounted () {
+    this.r = this.getRandomInt(79)
+    var requestOptions = {
+      method: 'GET',
+      redirect: 'follow'
+    };
+
+    fetch("http://localhost:8080/api/v1/quotes/"+this.r, requestOptions)
+
+        .then(response => response.text())
+        .then(result =>  this.randomQuote = result)
+        .catch(error => console.log('error', error));
+  }
 };
 </script>
 
@@ -34,14 +53,17 @@ export default {
   width: 95%;
   margin: auto;
 }
+
 h1 {
   font-size: 4vw;
   text-align: center;
   font-style: italic;
 }
+
 .img {
   width: 50%;
 }
+
 .quote {
   width: 50%;
 }
@@ -51,9 +73,11 @@ h1 {
     display: flex;
     flex-direction: column;
   }
+
   .img {
     width: 100%;
   }
+
   .quote {
     width: 100%;
   }

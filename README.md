@@ -44,17 +44,28 @@ npm run serve
     
 ### Frontend implementieren
 
-7. Es existiert mit der Komponente `ChuckNorrisQuote.vue` bereits eine Vue-Komponente, die aktuell jedoch keine Dynamik aufweist. Implementieren Sie die Methode `loadRandomQuote()`. Rufen Sie in der Methode Ihren Rest-Endpunkt auf. Verwenden Sie die Methode `getRandomInt()`, um Zufallszahlen zu erzeugen. Die Obergrenze `maxExclusive` muss 79 sein, da es nicht mehr Quotes im Backend gibt. Sobald die Seite neu geladen wird, soll ein neuer Spruch geladen und angezeigt werden.
+7. Es existiert mit der Komponente `ChuckNorrisQuote.vue` bereits eine Vue-Komponente, die aktuell jedoch keine 
+Dynamik aufweist. Implementieren Sie die Methode `loadRandomQuote()`. Rufen Sie in der Methode Ihren Rest-Endpunkt auf. 
+Verwenden Sie die Methode `getRandomInt()`, um Zufallszahlen zu erzeugen. Die Obergrenze `maxExclusive` muss 79 sein, 
+da es nicht mehr Quotes im Backend gibt. Sobald die Seite neu geladen wird, soll ein neuer Spruch geladen und angezeigt werden.
+
 
 8. Erweitern Sie die Vue-Komponente wie folgt: Sobald der User auf Chuck Norris klickt, soll ein neuer Spruch angezeigt werden.
 
+
 9. Implementieren Sie eine Route zur View `AboutMe.vue`.
 
-10. Erstellen Sie im Ordner `frontend/src/components` eine neue Vue-Komponente `AboutMeDetails.vue`. Diese Komponente soll Details über Sie anzeigen, z. B. Ihren Namen und Ihre Matrikelnummer. Sie können hier aber gener kreativ sein. Verwenden Sie mind. 3 CSS-Attribute für das Syling.
+
+10. Erstellen Sie im Ordner `frontend/src/components` eine neue Vue-Komponente `AboutMeDetails.vue`. 
+Diese Komponente soll Details über Sie anzeigen, z. B. Ihren Namen und Ihre Matrikelnummer.
+Sie können hier aber gener kreativ sein. Verwenden Sie mind. 3 CSS-Attribute für das Syling.
+
 
 11. Verwenden Sie Ihre soeben erstellte Komponente in der View `AboutMe.vue` analog zur View `AboutChuck.vue`. 
 
+
 12. Testen Sie alle Funktionalitäten Ihrer Vue App im Browser.
+
 
 ### Unit Tests
 
